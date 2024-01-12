@@ -1,0 +1,12 @@
+C:\Users\fatih\RiderProjects\WebApi\Web.Base\bin\Debug\net8.0\Web.Base.deps.json
+C:\Users\fatih\RiderProjects\WebApi\Web.Base\bin\Debug\net8.0\Web.Base.dll
+C:\Users\fatih\RiderProjects\WebApi\Web.Base\bin\Debug\net8.0\Web.Base.pdb
+C:\Users\fatih\RiderProjects\WebApi\Web.Base\obj\Debug\net8.0\Web.Base.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fatih\RiderProjects\WebApi\Web.Base\obj\Debug\net8.0\Web.Base.AssemblyInfoInputs.cache
+C:\Users\fatih\RiderProjects\WebApi\Web.Base\obj\Debug\net8.0\Web.Base.AssemblyInfo.cs
+C:\Users\fatih\RiderProjects\WebApi\Web.Base\obj\Debug\net8.0\Web.Base.csproj.CoreCompileInputs.cache
+C:\Users\fatih\RiderProjects\WebApi\Web.Base\obj\Debug\net8.0\Web.Base.sourcelink.json
+C:\Users\fatih\RiderProjects\WebApi\Web.Base\obj\Debug\net8.0\Web.Base.dll
+C:\Users\fatih\RiderProjects\WebApi\Web.Base\obj\Debug\net8.0\refint\Web.Base.dll
+C:\Users\fatih\RiderProjects\WebApi\Web.Base\obj\Debug\net8.0\Web.Base.pdb
+C:\Users\fatih\RiderProjects\WebApi\Web.Base\obj\Debug\net8.0\ref\Web.Base.dll
