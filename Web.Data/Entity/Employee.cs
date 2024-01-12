@@ -5,7 +5,7 @@ using WebBase.Entity;
 
 namespace Web.Data.Entity;
 [Table("Employee", Schema = "dbo")]
-public class Employee:BaseEntity
+public class Employee:BaseEntityWithId
 {
     public string IdentityNumber { get; set; }
     public string FirstName { get; set; }

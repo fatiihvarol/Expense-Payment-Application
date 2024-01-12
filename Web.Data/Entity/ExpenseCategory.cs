@@ -18,9 +18,19 @@ public class ExpenseCategoryConfiguration : IEntityTypeConfiguration<ExpenseCate
 {
     public void Configure(EntityTypeBuilder<ExpenseCategory> builder)
     {
-        builder.Property(ec => ec.CategoryName).HasMaxLength(100).IsRequired();
-        builder.Property(ec => ec.Description).HasMaxLength(255);
+      
+        builder.HasKey(ec => ec.CategoryId);
 
-    
+        builder.Property(ec => ec.CategoryName)
+            .HasMaxLength(100)
+            .IsRequired();
+
+        builder.Property(ec => ec.Description)
+            .HasMaxLength(255);
+
+        builder.HasMany(ec => ec.Expenses)
+            .WithOne(e => e.Category)
+            .HasForeignKey(e => e.CategoryId)
+            .OnDelete(DeleteBehavior.Restrict); 
     }
 }
