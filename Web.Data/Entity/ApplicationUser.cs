@@ -21,6 +21,8 @@ public class ApplicationUserConfiguration : IEntityTypeConfiguration<Application
 {
     public void Configure(EntityTypeBuilder<ApplicationUser> builder)
     {
+        builder.HasKey(x => x.Id);
+        
         builder.Property(x => x.InsertDate).IsRequired().HasDefaultValueSql("GETDATE()");
         builder.Property(x => x.InsertUserId).IsRequired();
         builder.Property(x => x.UpdateDate);

@@ -7,6 +7,8 @@ namespace Web.Data.Entity;
 [Table("Employee", Schema = "dbo")]
 public class Employee:BaseEntityWithId
 {
+    public int ApplicationUserId { get; set; } // Foreign key for ApplicationUser
+    public ApplicationUser ApplicationUser { get; set; } 
     public string IdentityNumber { get; set; }
     public string FirstName { get; set; }
     public string LastName { get; set; }
@@ -37,5 +39,9 @@ public class Employee:BaseEntityWithId
             .WithOne(expense => expense.Employee)
             .HasForeignKey(expense => expense.EmployeeId);
 
+        builder.HasOne(e => e.ApplicationUser)
+            .WithMany()
+            .HasForeignKey(e => e.ApplicationUserId)
+            .IsRequired();
     }
 }

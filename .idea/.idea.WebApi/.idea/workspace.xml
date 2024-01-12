@@ -11,21 +11,17 @@
   <component name="ChangeListManager">
     <list default="true" id="31418a8e-4f30-43ee-8ea5-210c8ec81ee4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Api/Web.Api.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/Web.Api.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Api.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Api.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Api.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Api.runtimeconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Api.runtimeconfig.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Base.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Base.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Base.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Base.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Data.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Data.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.csproj.AssemblyReference.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.genruntimeconfig.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/apphost.exe" afterDir="false" />
@@ -40,12 +36,9 @@
       <change beforePath="$PROJECT_DIR$/Web.Base/obj/Debug/net8.0/Web.Base.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Base/obj/Debug/net8.0/Web.Base.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Base/obj/Debug/net8.0/ref/Web.Base.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Base/obj/Debug/net8.0/ref/Web.Base.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Base/obj/Debug/net8.0/refint/Web.Base.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Base/obj/Debug/net8.0/refint/Web.Base.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Data/DbContext/VbDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Data/DbContext/VbDbContext.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Data/Entity/ApplicationUser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Data/Entity/ApplicationUser.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Data/Entity/Employee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Data/Entity/Employee.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Data/Entity/Expense.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Data/Entity/Expense.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Data/Entity/ExpenseCategory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Data/Entity/ExpenseCategory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Data/Entity/Payment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Data/Entity/Payment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Data/Migrations/VbDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Data/Migrations/VbDbContextModelSnapshot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Data/bin/Debug/net8.0/Web.Base.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Data/bin/Debug/net8.0/Web.Base.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Data/bin/Debug/net8.0/Web.Base.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Data/bin/Debug/net8.0/Web.Base.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Data/bin/Debug/net8.0/Web.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Data/bin/Debug/net8.0/Web.Data.dll" afterDir="false" />
