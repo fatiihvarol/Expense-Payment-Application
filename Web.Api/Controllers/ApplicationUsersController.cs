@@ -45,6 +45,27 @@ namespace WebApi.Controllers
             var result = await _mediator.Send(operation);
             return result;
         }
+        [HttpPost]
+        public async Task<ApiResponse<ApplicationUserResponse>> CreateApplicationUser( ApplicationUserRequest request)
+        {
+            var operation = new CreateApplicationUserCommand(request) ;
+            var result = await _mediator.Send(operation);
+            return result;
+        }
+        [HttpPut("Id")]
+        public async Task<ApiResponse> UpdateApplicationUser(int id,ApplicationUserRequest request)
+        {
+            var operation = new UpdateApplicationUserCommand(id,request) ;
+            var result = await _mediator.Send(operation);
+            return result;
+        }
+        [HttpDelete("Id")]
+        public async Task<ApiResponse> DeleteApplicationUser(int id)
+        {
+            var operation = new DeleteApplicationUserCommand(id) ;
+            var result = await _mediator.Send(operation);
+            return result;
+        }
 
      
     }

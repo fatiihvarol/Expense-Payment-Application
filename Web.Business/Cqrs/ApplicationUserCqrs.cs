@@ -5,8 +5,8 @@ using WebSchema;
 namespace Web.Business.Cqrs;
 
 public record CreateApplicationUserCommand(ApplicationUserRequest Model ):IRequest <ApiResponse<ApplicationUserResponse>>;
-public record UpdateApplicationUserCommand(ApplicationUserRequest Model ):IRequest <ApiResponse<ApplicationUserResponse>>;
-public record DeleteApplicationUserCommand(ApplicationUserRequest Model ):IRequest <ApiResponse<ApplicationUserResponse>>;
+public record UpdateApplicationUserCommand(int Id,ApplicationUserRequest Model ):IRequest <ApiResponse>;
+public record DeleteApplicationUserCommand(int Id):IRequest <ApiResponse>;
 
 
 public record GelAllApplicationUserQuery():IRequest <ApiResponse<List<ApplicationUserResponse>>>;
