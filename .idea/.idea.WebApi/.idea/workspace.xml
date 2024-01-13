@@ -9,29 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31418a8e-4f30-43ee-8ea5-210c8ec81ee4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Api/Controllers/ApplicationUsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/Controllers/ApplicationUsersController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Api/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Base/obj/Debug/net8.0/Web.Base.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Base/obj/Debug/net8.0/Web.Base.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Base/obj/Debug/net8.0/Web.Base.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Base/obj/Debug/net8.0/Web.Base.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Base/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Base/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Business/Command/ApplicationUserCommand/ApplicationUserCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Business/Command/ApplicationUserCommand/ApplicationUserCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Business/Cqrs/ApplicationUserCqrs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Business/Cqrs/ApplicationUserCqrs.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Business/Mapper/MapperConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Business/Mapper/MapperConfig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Business/obj/Debug/net8.0/Web.Business.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Business/obj/Debug/net8.0/Web.Business.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Business/obj/Debug/net8.0/Web.Business.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Business/obj/Debug/net8.0/Web.Business.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Business/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Business/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Data/obj/Debug/net8.0/Web.Data.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Data/obj/Debug/net8.0/Web.Data.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Data/obj/Debug/net8.0/Web.Data.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Data/obj/Debug/net8.0/Web.Data.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Data/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Data/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Schema/obj/Debug/net8.0/Web.Schema.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Schema/obj/Debug/net8.0/Web.Schema.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Schema/obj/Debug/net8.0/Web.Schema.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Schema/obj/Debug/net8.0/Web.Schema.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Schema/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Schema/obj/rider.project.model.nuget.info" afterDir="false" />
-    </list>
+    <list default="true" id="31418a8e-4f30-43ee-8ea5-210c8ec81ee4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -164,7 +142,7 @@
       <workItem from="1705088771446" duration="378000" />
       <workItem from="1705149467526" duration="6908000" />
       <workItem from="1705156460499" duration="1058000" />
-      <workItem from="1705163771618" duration="1742000" />
+      <workItem from="1705163771618" duration="2321000" />
     </task>
     <task id="LOCAL-00001" summary="all schemas complated">
       <option name="closed" value="true" />

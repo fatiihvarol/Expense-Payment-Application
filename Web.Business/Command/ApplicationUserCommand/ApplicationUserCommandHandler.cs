@@ -54,13 +54,15 @@ public class ApplicationUserCommandHandler:
 
         if (Md5Extension.GetHash(request.Model.Password) != fromdb.Password)
         {
-            string hashedPassword = Md5Extension.GetHash(request.Model.Password);
+            var hashedPassword = Md5Extension.GetHash(request.Model.Password);
             fromdb.Password = hashedPassword;
         }
         fromdb.FirstName = request.Model.FirstName;
         fromdb.LastName = request.Model.LastName;
         fromdb.Email = request.Model.Email;
         fromdb.Role = request.Model.Role;
+        
+        fromdb.UpdateDate=DateTime.Now;
         
         await _dbContext.SaveChangesAsync(cancellationToken);
         return new ApiResponse();
