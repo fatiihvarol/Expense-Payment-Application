@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace WebSchema;
 
-public class PaymentRequestModel
+public class PaymentRequest
 {
     [JsonIgnore]
     public int PaymentId { get; set; }
@@ -16,7 +16,7 @@ public class PaymentRequestModel
 }
 
 
-public class PaymentResponseModel
+public class PaymentResponse
 {
     public int PaymentId { get; set; }
     public int ExpenseId { get; set; }

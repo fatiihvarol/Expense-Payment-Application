@@ -3,7 +3,7 @@ using Web.Data.Entity;
 
 namespace WebSchema;
 
-public class EmployeeRequestModel
+public class EmployeeRequest
 {
     [JsonIgnore]
     public int Id { get; set; }
@@ -17,7 +17,7 @@ public class EmployeeRequestModel
     
 }
 
-public class EmployeeResponseModel
+public class EmployeeResponse
 {
     public int ApplicationUserId { get; set; } 
     public string IdentityNumber { get; set; }

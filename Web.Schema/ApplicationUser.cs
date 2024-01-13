@@ -1,6 +1,6 @@
 namespace WebSchema;
 
-public class ApplicationUserRequestModel
+public class ApplicationUserRequest
 {
     public string UserName { get; set; }
     public string Password { get; set; }
@@ -12,7 +12,7 @@ public class ApplicationUserRequestModel
 
 
 
-public class ApplicationUserResponseModel
+public class ApplicationUserResponse
 {
     public string UserName { get; set; }
     public string Password { get; set; }

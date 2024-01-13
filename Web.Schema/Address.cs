@@ -1,6 +1,6 @@
 namespace WebSchema;
 
-public class AddressRequestModel
+public class AddressRequest
 {
     public int ExpenseId { get; set; }
     public string Address1 { get; set; }
@@ -13,7 +13,7 @@ public class AddressRequestModel
 }
 
 
-public class AddressResponseModel
+public class AddressResponse
 {
     public int ExpenseId { get; set; }
     public string Address1 { get; set; }

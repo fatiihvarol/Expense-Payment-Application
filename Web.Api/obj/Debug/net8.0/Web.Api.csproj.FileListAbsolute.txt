@@ -81,3 +81,14 @@ C:\Users\fatih\RiderProjects\WebApi\Web.Api\bin\Debug\net8.0\Web.Data.dll
 C:\Users\fatih\RiderProjects\WebApi\Web.Api\bin\Debug\net8.0\Web.Data.pdb
 C:\Users\fatih\RiderProjects\WebApi\Web.Api\bin\Debug\net8.0\Web.Base.pdb
 C:\Users\fatih\RiderProjects\WebApi\Web.Api\obj\Debug\net8.0\Web.Api.sourcelink.json
+C:\Users\fatih\RiderProjects\WebApi\Web.Api\bin\Debug\net8.0\AutoMapper.dll
+C:\Users\fatih\RiderProjects\WebApi\Web.Api\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\fatih\RiderProjects\WebApi\Web.Api\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\fatih\RiderProjects\WebApi\Web.Api\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\fatih\RiderProjects\WebApi\Web.Api\bin\Debug\net8.0\MediatR.dll
+C:\Users\fatih\RiderProjects\WebApi\Web.Api\bin\Debug\net8.0\MediatR.Contracts.dll
+C:\Users\fatih\RiderProjects\WebApi\Web.Api\bin\Debug\net8.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\fatih\RiderProjects\WebApi\Web.Api\bin\Debug\net8.0\Web.Business.dll
+C:\Users\fatih\RiderProjects\WebApi\Web.Api\bin\Debug\net8.0\Web.Schema.dll
+C:\Users\fatih\RiderProjects\WebApi\Web.Api\bin\Debug\net8.0\Web.Business.pdb
+C:\Users\fatih\RiderProjects\WebApi\Web.Api\bin\Debug\net8.0\Web.Schema.pdb
