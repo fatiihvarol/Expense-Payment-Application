@@ -14,6 +14,17 @@ public class VbDbContext : Microsoft.EntityFrameworkCore.DbContext
   
     public DbSet<ApplicationUser> ApplicationUsers { get; set; }
     
+    public DbSet<Employee> Employees { get; set; }
+
+    public DbSet<Address> Addresses { get; set; }
+
+    public DbSet<Expense> Expenses { get; set; }
+
+    public DbSet<ExpenseCategory> ExpenseCategories { get; set; }
+
+    public DbSet<Payment> Payments { get; set; }
+
+    
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         

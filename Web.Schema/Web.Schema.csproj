@@ -7,4 +7,8 @@
         <RootNamespace>WebSchema</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Web.Data\Web.Data.csproj" />
+    </ItemGroup>
+
 </Project>
