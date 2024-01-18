@@ -21,6 +21,7 @@ namespace WebApi.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "admin")]
         public async Task<ApiResponse<List<ApplicationUserResponse>>> Get()
         {
             var operation = new GelAllApplicationUserQuery();
@@ -29,6 +30,7 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize(Roles = "admin")]
         public async Task<ApiResponse<ApplicationUserResponse>> GetById(int id)
         {
             var operation = new GetByIdApplicationUserQuery(id) ;
@@ -37,6 +39,7 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("search")]
+        [Authorize(Roles = "admin")]
         public async Task<ApiResponse<List<ApplicationUserResponse>>> GetByParameters(
             [FromQuery] string? firstName, [FromQuery] string? lastName, [FromQuery] string? email    , [FromQuery] string? role)
         {
