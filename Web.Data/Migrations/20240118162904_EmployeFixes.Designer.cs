@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Web.Data.DbContext;
 
@@ -11,9 +12,11 @@ using Web.Data.DbContext;
 namespace Web.Data.Migrations
 {
     [DbContext(typeof(VbDbContext))]
-    partial class VbDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240118162904_EmployeFixes")]
+    partial class EmployeFixes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -33,6 +33,7 @@ public class Employee:BaseEntityWithId
         builder.Property(e => e.DateOfBirth).IsRequired();
         builder.Property(e => e.IBAN).HasMaxLength(50).IsRequired();
         builder.Property(e => e.LastActivityDate).IsRequired();
+        builder.Property(x => x.IsActive).IsRequired().HasDefaultValue(true);
 
         // Configure the relationship with Expense entity
         builder.HasMany(e => e.Expenses)

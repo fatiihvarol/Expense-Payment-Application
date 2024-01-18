@@ -48,30 +48,30 @@ namespace WebApi.Controllers
             var result = await _mediator.Send(operation);
             return result;
         }
-        /*[HttpPost]
-        [Authorize(Roles = "admin")]
-        public async Task<ApiResponse<ApplicationUserResponse>> CreateEmployee( ApplicationUserRequest request)
+        [HttpPost]
+      //  [Authorize(Roles = "admin")]
+        public async Task<ApiResponse<EmployeeResponse>> CreateEmployee( EmployeeRequest request)
         {
-            var operation = new CreateApplicationUserCommand(request) ;
+            var operation = new CreateEmployeeCommand(request) ;
             var result = await _mediator.Send(operation);
             return result;
         }
         [HttpPut("Id")]
-        [Authorize(Roles = "admin")]
-        public async Task<ApiResponse> UpdateEmployee(int id,ApplicationUserRequest request)
+       // [Authorize(Roles = "admin")]
+        public async Task<ApiResponse> UpdateEmployee(int id,EmployeeRequest request)
         {
-            var operation = new UpdateApplicationUserCommand(id,request) ;
+            var operation = new UpdateEmployeeCommand(id,request) ;
             var result = await _mediator.Send(operation);
             return result;
         }
         [HttpDelete("Id")]
-        [Authorize(Roles = "admin")]
+       // [Authorize(Roles = "admin")]
         public async Task<ApiResponse> DeleteEmployee(int id)
         {
-            var operation = new DeleteApplicationUserCommand(id) ;
+            var operation = new DeleteEmployeeCommand(id) ;
             var result = await _mediator.Send(operation);
             return result;
-        }*/
+        }
 
      
     }

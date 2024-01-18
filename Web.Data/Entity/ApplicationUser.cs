@@ -16,6 +16,7 @@ public class ApplicationUser : BaseEntityWithId
     public string Role { get; set; }
     public DateTime LastActivityDate { get; set; }
     public int PasswordRetryCount { get; set; }
+    
 }
 public class ApplicationUserConfiguration : IEntityTypeConfiguration<ApplicationUser>
 {

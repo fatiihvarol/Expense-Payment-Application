@@ -13,7 +13,7 @@ using WebBase.Response;
 using WebBase.Token;
 using WebSchema;
 
-namespace Web.Business.Command;
+namespace Web.Business.Command.TokenCommand;
 
 public class TokenCommandHandler :
     IRequestHandler<CreateTokenCommand, ApiResponse<TokenResponse>>

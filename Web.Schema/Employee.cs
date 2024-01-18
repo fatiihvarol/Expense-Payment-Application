@@ -7,7 +7,6 @@ public class EmployeeRequest
 {
     [JsonIgnore]
     public int Id { get; set; }
-    
     public int ApplicationUserId { get; set; }  
     public string IdentityNumber { get; set; }
     public string FirstName { get; set; }
@@ -19,6 +18,7 @@ public class EmployeeRequest
 
 public class EmployeeResponse
 {
+    public int Id { get; set; }
     public int ApplicationUserId { get; set; } 
     public string IdentityNumber { get; set; }
     public string FirstName { get; set; }
