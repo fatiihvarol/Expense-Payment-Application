@@ -33,8 +33,9 @@ public class ExpenseResponse
 
     public string Document { get; set; }
 
-    public ExpenseCategory Category { get; set; }
-    public Address Address { get; set; }
-    public Employee Employee { get; set; }
-    public Payment Payment { get; set; }
+    public ExpenseCategoryResponse Category { get; set; }
+    public AddressResponse Address { get; set; }
+    [JsonIgnore]
+    public EmployeeResponse Employee { get; set; }
+    public PaymentResponse Payment { get; set; }
 }

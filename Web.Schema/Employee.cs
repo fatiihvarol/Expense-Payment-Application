@@ -28,5 +28,6 @@ public class EmployeeResponse
     public string IBAN { get; set; }
     public DateTime LastActivityDate { get; set; }
     
-    public List<Expense> Expenses { get; set; }
+    
+    public List<ExpenseResponse> Expenses { get; set; }
 }

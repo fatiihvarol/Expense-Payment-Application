@@ -18,5 +18,6 @@ public class ExpenseCategoryResponse
     public string CategoryName { get; set; }
     public string Description { get; set; }
     
+    [JsonIgnore]
     public List<Expense> Expenses { get; set; }
 }

@@ -8,20 +8,18 @@ using Web.Data.Entity;
 using WebBase.Response;
 using WebSchema;
 
-
+namespace Web.Business.Query.ApplicationUserQuery;
 public class ApplicationUserQueryHandler :
     IRequestHandler<GelAllApplicationUserQuery, ApiResponse<List<ApplicationUserResponse>>>,
     IRequestHandler<GetByIdApplicationUserQuery, ApiResponse<ApplicationUserResponse>>,
     IRequestHandler<GetByParameterApplicationUserQuery, ApiResponse<List<ApplicationUserResponse>>>
 {
     private readonly VbDbContext _dbContext;
-    private readonly IMediator _mediator;
     private readonly IMapper _mapper;
 
-    public ApplicationUserQueryHandler(VbDbContext dbContext, IMediator mediator, IMapper mapper)
+    public ApplicationUserQueryHandler(VbDbContext dbContext, IMapper mapper)
     {
         _dbContext = dbContext;
-        _mediator = mediator;
         _mapper = mapper;
     }
 

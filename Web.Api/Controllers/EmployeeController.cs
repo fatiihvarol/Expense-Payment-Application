@@ -11,46 +11,46 @@ namespace WebApi.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
-    public class ApplicationUsersController : ControllerBase
+    public class EmployeeController : ControllerBase
     {
         private readonly IMediator _mediator;
 
-        public ApplicationUsersController(IMediator mediator)
+        public EmployeeController(IMediator mediator)
         {
             _mediator = mediator;
         }
 
         [HttpGet]
-        [Authorize(Roles = "admin")]
-        public async Task<ApiResponse<List<ApplicationUserResponse>>> Get()
+       // [Authorize(Roles = "admin")]
+        public async Task<ApiResponse<List<EmployeeResponse>>> GetAllEmployees()
         {
-            var operation = new GelAllApplicationUserQuery();
+            var operation = new GelAllEmployeesQuery();
             var result = await _mediator.Send(operation);
             return result;
         }
 
         [HttpGet("{id}")]
-        [Authorize(Roles = "admin")]
-        public async Task<ApiResponse<ApplicationUserResponse>> GetById(int id)
+      //  [Authorize(Roles = "admin")]
+        public async Task<ApiResponse<EmployeeResponse>> GetEmployeeById(int id)
         {
-            var operation = new GetByIdApplicationUserQuery(id) ;
+            var operation = new GetByIdEmployeeQuery(id) ;
             var result = await _mediator.Send(operation);
             return result;
         }
 
         [HttpGet("search")]
-        [Authorize(Roles = "admin")]
-        public async Task<ApiResponse<List<ApplicationUserResponse>>> GetByParameters(
-            [FromQuery] string? firstName, [FromQuery] string? lastName, [FromQuery] string? email    , [FromQuery] string? role)
+       // [Authorize(Roles = "admin")]
+        public async Task<ApiResponse<List<EmployeeResponse>>> GetEmployeeByParameters(
+           [FromQuery] string? identityNumber, [FromQuery] string? firstName    , [FromQuery] string? lastName)
         {
-            var operation = new GetByParameterApplicationUserQuery(role, email, firstName, lastName) ;
+            var operation = new GetByParameterEmployeeQuery( identityNumber,firstName,lastName) ;
 
             var result = await _mediator.Send(operation);
             return result;
         }
-        [HttpPost]
+        /*[HttpPost]
         [Authorize(Roles = "admin")]
-        public async Task<ApiResponse<ApplicationUserResponse>> CreateApplicationUser( ApplicationUserRequest request)
+        public async Task<ApiResponse<ApplicationUserResponse>> CreateEmployee( ApplicationUserRequest request)
         {
             var operation = new CreateApplicationUserCommand(request) ;
             var result = await _mediator.Send(operation);
@@ -58,7 +58,7 @@ namespace WebApi.Controllers
         }
         [HttpPut("Id")]
         [Authorize(Roles = "admin")]
-        public async Task<ApiResponse> UpdateApplicationUser(int id,ApplicationUserRequest request)
+        public async Task<ApiResponse> UpdateEmployee(int id,ApplicationUserRequest request)
         {
             var operation = new UpdateApplicationUserCommand(id,request) ;
             var result = await _mediator.Send(operation);
@@ -66,12 +66,12 @@ namespace WebApi.Controllers
         }
         [HttpDelete("Id")]
         [Authorize(Roles = "admin")]
-        public async Task<ApiResponse> DeleteApplicationUser(int id)
+        public async Task<ApiResponse> DeleteEmployee(int id)
         {
             var operation = new DeleteApplicationUserCommand(id) ;
             var result = await _mediator.Send(operation);
             return result;
-        }
+        }*/
 
      
     }

@@ -1,3 +1,5 @@
+using System.Text.Json.Serialization;
+
 namespace WebSchema;
 
 public class AddressRequest
@@ -15,6 +17,7 @@ public class AddressRequest
 
 public class AddressResponse
 {
+    [JsonIgnore]
     public int ExpenseId { get; set; }
     public string Address1 { get; set; }
     public string Address2 { get; set; }

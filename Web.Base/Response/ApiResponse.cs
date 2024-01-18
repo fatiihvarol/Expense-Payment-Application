@@ -48,6 +48,12 @@ public class ApiResponse<T>
         Response = data;
         Message = "Success";
     }
+    public ApiResponse(T data,bool isSuccess)
+    {
+        Success = isSuccess;
+        Response = data;
+        Message = "Success";
+    }
     public ApiResponse(string message)
     {
         Success = false;

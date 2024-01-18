@@ -1,6 +1,7 @@
 using System;
 using System.Reflection;
 using System.Text;
+using System.Text.Json.Serialization;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -45,6 +46,10 @@ builder.Services.AddSwaggerGen(c =>
 
 string connection = builder.Configuration.GetConnectionString("MsSqlConnection");
 builder.Services.AddDbContext<VbDbContext>(options => options.UseSqlServer(connection));
+
+builder.Services.AddControllers().AddJsonOptions(x =>
+    x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+
 
 builder.Services.AddMediatR(cfg =>
     cfg.RegisterServicesFromAssembly(typeof(CreateApplicationUserCommand).GetTypeInfo().Assembly));

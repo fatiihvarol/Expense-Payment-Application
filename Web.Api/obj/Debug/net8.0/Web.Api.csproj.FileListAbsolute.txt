@@ -93,3 +93,4 @@ C:\Users\fatih\RiderProjects\WebApi\Web.Api\bin\Debug\net8.0\Web.Schema.dll
 C:\Users\fatih\RiderProjects\WebApi\Web.Api\bin\Debug\net8.0\Web.Business.pdb
 C:\Users\fatih\RiderProjects\WebApi\Web.Api\bin\Debug\net8.0\Web.Schema.pdb
 C:\Users\fatih\RiderProjects\WebApi\Web.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\fatih\RiderProjects\WebApi\Web.Api\bin\Debug\net8.0\Newtonsoft.Json.dll
