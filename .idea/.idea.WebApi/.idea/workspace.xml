@@ -9,11 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="31418a8e-4f30-43ee-8ea5-210c8ec81ee4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Web.Api/Controllers/ExpensesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/Controllers/ExpensesController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Business/Command/ExpenseCommand/ExpenseCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Business/Command/ExpenseCommand/ExpenseCommandHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Business/Cqrs/ExpeseCqrs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Business/Cqrs/ExpeseCqrs.cs" afterDir="false" />
-    </list>
+    <list default="true" id="31418a8e-4f30-43ee-8ea5-210c8ec81ee4" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -149,7 +145,7 @@
       <workItem from="1705163771618" duration="3179000" />
       <workItem from="1705576551794" duration="12397000" />
       <workItem from="1705593678345" duration="2171000" />
-      <workItem from="1705687334399" duration="5706000" />
+      <workItem from="1705687334399" duration="6702000" />
     </task>
     <task id="LOCAL-00001" summary="all schemas complated">
       <option name="closed" value="true" />
