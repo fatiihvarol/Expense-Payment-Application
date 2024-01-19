@@ -12,11 +12,11 @@ public class ExpenseRequest
     public int CategoryId { get; set; }
     public DateTime Date { get; set; }
     public decimal Amount { get; set; }
-    public string Status { get; set; }
     public string Description { get; set; }
-    public string? RejectionDescription { get; set; }
     public string Document { get; set; }
     
+    public AddressRequest Address { get; set; }
+
 }
 
 
@@ -29,7 +29,7 @@ public class ExpenseResponse
     public decimal Amount { get; set; }
     public string Status { get; set; }
     public string Description { get; set; }
-    public string RejectionDescription { get; set; }
+    public string? RejectionDescription { get; set; }
 
     public string Document { get; set; }
 

@@ -31,6 +31,7 @@ public class ExpenseConfiguration : IEntityTypeConfiguration<Expense>
     {
         // Primary key
         builder.HasKey(e => e.ExpenseId);
+        builder.Property(x => x.IsActive).IsRequired().HasDefaultValue(true);
 
 
         builder.HasOne(e => e.Category)
@@ -55,10 +56,13 @@ public class ExpenseConfiguration : IEntityTypeConfiguration<Expense>
             .HasMaxLength(255);
 
         builder.Property(e => e.RejectionDescription)
+            .HasDefaultValue("")
             .HasMaxLength(255);
 
         builder.Property(e => e.Document)
             .HasMaxLength(255);
+
+        builder.HasIndex(x => x.ExpenseId);
 
     }
 }

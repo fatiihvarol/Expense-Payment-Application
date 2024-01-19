@@ -19,9 +19,15 @@ public class MapperConfig : Profile
             .ForMember(dest => dest.Payment, opt => opt.MapFrom(src => src.Payment));
 
         CreateMap<Address, AddressResponse>();
+        CreateMap<AddressRequest, Address>();
 
         CreateMap<ExpenseCategory, ExpenseCategoryResponse>();
+        CreateMap<ExpenseRequest, Expense>()
+            .ForMember(dest => dest.Address, opt => opt.MapFrom(src => src.Address));
+
         
         CreateMap<Payment, PaymentResponse>();
+        CreateMap<ExpenseCategory, ExpenseCategoryResponse>();
+
     }
 }

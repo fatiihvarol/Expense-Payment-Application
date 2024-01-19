@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Web.Data.DbContext;
 
@@ -11,9 +12,11 @@ using Web.Data.DbContext;
 namespace Web.Data.Migrations
 {
     [DbContext(typeof(VbDbContext))]
-    partial class VbDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240119191609_RejectionNullable")]
+    partial class RejectionNullable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -267,9 +270,7 @@ namespace Web.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<bool>("IsActive")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bit")
-                        .HasDefaultValue(true);
+                        .HasColumnType("bit");
 
                     b.Property<string>("RejectionDescription")
                         .IsRequired()
@@ -293,8 +294,6 @@ namespace Web.Data.Migrations
                     b.HasIndex("CategoryId");
 
                     b.HasIndex("EmployeeId");
-
-                    b.HasIndex("ExpenseId");
 
                     b.ToTable("Expense", "dbo");
                 });

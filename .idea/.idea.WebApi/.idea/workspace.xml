@@ -11,7 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="31418a8e-4f30-43ee-8ea5-210c8ec81ee4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Api/Controllers/ExpenseController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Api/Controllers/ExpensesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/Controllers/ExpensesController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Api.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Api.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Api.pdb" afterDir="false" />
@@ -26,7 +26,6 @@
       <change beforePath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.sourcelink.json" afterDir="false" />
@@ -42,6 +41,8 @@
       <change beforePath="$PROJECT_DIR$/Web.Base/obj/Debug/net8.0/Web.Base.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Base/obj/Debug/net8.0/Web.Base.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Base/obj/Debug/net8.0/ref/Web.Base.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Base/obj/Debug/net8.0/ref/Web.Base.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Base/obj/Debug/net8.0/refint/Web.Base.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Base/obj/Debug/net8.0/refint/Web.Base.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Business/Cqrs/ExpeseCqrs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Business/Cqrs/ExpeseCqrs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Business/Mapper/MapperConfig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Business/Mapper/MapperConfig.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Business/bin/Debug/net8.0/Web.Base.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Business/bin/Debug/net8.0/Web.Base.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Business/bin/Debug/net8.0/Web.Base.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Business/bin/Debug/net8.0/Web.Base.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Business/bin/Debug/net8.0/Web.Business.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Business/bin/Debug/net8.0/Web.Business.dll" afterDir="false" />
@@ -59,6 +60,8 @@
       <change beforePath="$PROJECT_DIR$/Web.Business/obj/Debug/net8.0/Web.Business.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Business/obj/Debug/net8.0/Web.Business.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Business/obj/Debug/net8.0/ref/Web.Business.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Business/obj/Debug/net8.0/ref/Web.Business.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Business/obj/Debug/net8.0/refint/Web.Business.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Business/obj/Debug/net8.0/refint/Web.Business.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Data/Entity/Expense.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Data/Entity/Expense.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Data/Migrations/VbDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Data/Migrations/VbDbContextModelSnapshot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Data/bin/Debug/net8.0/Web.Base.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Data/bin/Debug/net8.0/Web.Base.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Data/bin/Debug/net8.0/Web.Base.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Data/bin/Debug/net8.0/Web.Base.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Data/bin/Debug/net8.0/Web.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Data/bin/Debug/net8.0/Web.Data.dll" afterDir="false" />
@@ -66,11 +69,13 @@
       <change beforePath="$PROJECT_DIR$/Web.Data/obj/Debug/net8.0/Web.Data.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Data/obj/Debug/net8.0/Web.Data.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Data/obj/Debug/net8.0/Web.Data.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Data/obj/Debug/net8.0/Web.Data.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Data/obj/Debug/net8.0/Web.Data.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Data/obj/Debug/net8.0/Web.Data.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Data/obj/Debug/net8.0/Web.Data.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Data/obj/Debug/net8.0/Web.Data.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Data/obj/Debug/net8.0/Web.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Data/obj/Debug/net8.0/Web.Data.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Data/obj/Debug/net8.0/Web.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Data/obj/Debug/net8.0/Web.Data.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Data/obj/Debug/net8.0/Web.Data.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Data/obj/Debug/net8.0/Web.Data.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Data/obj/Debug/net8.0/ref/Web.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Data/obj/Debug/net8.0/ref/Web.Data.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Data/obj/Debug/net8.0/refint/Web.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Data/obj/Debug/net8.0/refint/Web.Data.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Schema/Expense.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Schema/Expense.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Schema/bin/Debug/net8.0/Web.Base.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Schema/bin/Debug/net8.0/Web.Base.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Schema/bin/Debug/net8.0/Web.Base.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Schema/bin/Debug/net8.0/Web.Base.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web.Schema/bin/Debug/net8.0/Web.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Schema/bin/Debug/net8.0/Web.Data.dll" afterDir="false" />
@@ -221,7 +226,7 @@
       <workItem from="1705163771618" duration="3179000" />
       <workItem from="1705576551794" duration="12397000" />
       <workItem from="1705593678345" duration="2171000" />
-      <workItem from="1705687334399" duration="2052000" />
+      <workItem from="1705687334399" duration="4913000" />
     </task>
     <task id="LOCAL-00001" summary="all schemas complated">
       <option name="closed" value="true" />

@@ -44,4 +44,30 @@ public class ExpensesController:ControllerBase
         var result = await _mediator.Send(operation);
         return result;
     }
+    
+    
+    [HttpPost]
+    //  [Authorize(Roles = "admin")]
+    public async Task<ApiResponse<ExpenseResponse>> CreateExpense( ExpenseRequest request)
+    {
+        var operation = new CreateExpenseCommand(request) ;
+        var result = await _mediator.Send(operation);
+        return result;
+    }
+    [HttpPut("Id")]
+    // [Authorize(Roles = "admin")]
+    public async Task<ApiResponse> UpdateExpense(int id,[FromQuery] string status,[FromQuery] string? rejectionDescription)
+    {
+        var operation = new UpdateExpenseCommand(id,status,rejectionDescription) ;
+        var result = await _mediator.Send(operation);
+        return result;
+    }
+    [HttpDelete("Id")]
+    // [Authorize(Roles = "admin")]
+    public async Task<ApiResponse> DeleteEmployee(int id)
+    {
+        var operation = new DeleteExpenseCommand(id) ;
+        var result = await _mediator.Send(operation);
+        return result;
+    }
 }
