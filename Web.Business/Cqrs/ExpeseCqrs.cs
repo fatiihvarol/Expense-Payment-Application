@@ -7,7 +7,7 @@ using WebSchema;
 
 
 public record CreateExpenseCommand(ExpenseRequest Model ):IRequest <ApiResponse<ExpenseResponse>>;
-public record UpdateExpenseCommand(int Id,string Status,string? RejectionDescription ):IRequest <ApiResponse>;
+public record UpdateExpenseCommand(int Id, string Description):IRequest <ApiResponse>;
 public record DeleteExpenseCommand(int Id):IRequest <ApiResponse>;
 
 

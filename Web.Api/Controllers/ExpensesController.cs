@@ -56,9 +56,9 @@ public class ExpensesController:ControllerBase
     }
     [HttpPut("Id")]
     // [Authorize(Roles = "admin")]
-    public async Task<ApiResponse> UpdateExpense(int id,[FromQuery] string status,[FromQuery] string? rejectionDescription)
+    public async Task<ApiResponse> UpdateExpense(int id,[FromQuery] string description)
     {
-        var operation = new UpdateExpenseCommand(id,status,rejectionDescription) ;
+        var operation = new UpdateExpenseCommand(id,description) ;
         var result = await _mediator.Send(operation);
         return result;
     }

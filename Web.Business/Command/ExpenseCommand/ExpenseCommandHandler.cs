@@ -55,21 +55,7 @@ public class ExpenseCommandHandler :
         if (fromDb == null)
             return new ApiResponse("expense with this id not found");
 
-        fromDb.Status = request.Status;
-
-
-        if (request.Status.Equals("approved"))
-        {
-            //TODO 1 make implemtation here
-            //make transection
-        }
-
-        else if (request.Status.Equals("declined", StringComparison.OrdinalIgnoreCase) &&
-                 request.RejectionDescription == null)
-        {
-            return new ApiResponse("when you declined expense you have to give rejection description");
-        }
-
+        fromDb.Description = request.Description;
 
         await _dbContext.SaveChangesAsync(cancellationToken);
         return new ApiResponse();
