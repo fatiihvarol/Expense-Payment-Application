@@ -81,6 +81,6 @@ public class ExpenseCategoryCommandHandler:
 
     private bool CheckExpenseCategoryHasWaitingExpenses(List<Expense> expenses)
     {
-        return expenses.Any(expense => expense.Status == ExpenseStatus.Waiting);
+        return expenses.Any(expense => expense.Status == ExpenseStatus.Pending);
     }
 }

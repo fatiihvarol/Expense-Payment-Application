@@ -39,7 +39,7 @@ public class ExpenseCommandHandler :
         var entity = _mapper.Map<ExpenseRequest, Expense>(request.Model);
 
         entity.InsertDate = DateTime.Now;
-        entity.Status = ExpenseStatus.Waiting;
+        entity.Status = ExpenseStatus.Pending;
 
 
         var entityResult = await _dbContext.AddAsync(entity, cancellationToken);

@@ -33,6 +33,7 @@ public class MapperConfig : Profile
 
         CreateMap<ExpenseCategoryRequest, ExpenseCategory>();
         CreateMap<ExpenseCategory, ExpenseCategoryResponse>();
+        
 
         CreateMap<Expense, ReportResponse>()
             .ForMember(dest => dest.Address, opt => opt.MapFrom(src => src.Address))

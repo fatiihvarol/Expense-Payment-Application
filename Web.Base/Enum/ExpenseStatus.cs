@@ -2,7 +2,7 @@ namespace WebBase.Enum;
 
 public enum ExpenseStatus
 {
-    Waiting,
+    Pending,
     Approved,
     Rejected
 }

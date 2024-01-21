@@ -1,6 +1,6 @@
 namespace WebBase.Enum;
 
-public enum ReportRequestType
+public enum ReportTimePeriod
 {
     Daily,
     Weekly,
