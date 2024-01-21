@@ -5,6 +5,7 @@ using WebBase.Response;
 using WebSchema;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Web.Data.Entity;
 using WebBase.Enum;
 
@@ -21,6 +22,7 @@ public class ReportsController : ControllerBase
         _mediator = mediator;
     }
 
+   // [Authorize(Roles = "employee,admin")]
     [HttpGet("MyReport")]
     public async Task<ActionResult<ApiResponse<List<ReportResponse>>>> GetMyReport(int id)
     {
@@ -30,7 +32,7 @@ public class ReportsController : ControllerBase
     }
     
     
-    
+    //[Authorize(Roles = "admin")]
     [HttpGet("ByPeriod")]
     public async Task<ActionResult<ApiResponse<List<ReportResponse>>>> GetCompanyReportByPeriod([FromQuery] ReportTimePeriod period)
     {
@@ -39,7 +41,7 @@ public class ReportsController : ControllerBase
         return result;
     }
     
-    
+    //[Authorize(Roles = "admin")]
     [HttpGet("ByEmployee")]
     public async Task<ActionResult<ApiResponse<List<ReportResponse>>>> GetCompanyReportByPeriod(int id,[FromQuery] ReportTimePeriod period)
     {
@@ -47,7 +49,7 @@ public class ReportsController : ControllerBase
         var result = await _mediator.Send(operation);
         return result;
     }
-    
+    //[Authorize(Roles = "admin")]
     [HttpGet("ByStatus")]
     public async Task<ActionResult<ApiResponse<List<ReportResponse>>>> GetCompanyReportByStatusAndPeriod([FromQuery] ExpenseStatus status)
     {
@@ -55,7 +57,7 @@ public class ReportsController : ControllerBase
         var result = await _mediator.Send(operation);
         return result;
     }
-    
+   // [Authorize(Roles = "admin")]
     [HttpGet("ByStatusAndPeriod")]
     public async Task<ActionResult<ApiResponse<List<ReportResponse>>>> GetCompanyReportByStatusAndPeriod([FromQuery] ExpenseStatus status, [FromQuery] ReportTimePeriod period)
     {
@@ -65,7 +67,7 @@ public class ReportsController : ControllerBase
     }
     
     
-    
+    //[Authorize(Roles = "admin")]
     [HttpGet("Approved")]
     public async Task<ActionResult<ApiResponse<List<PaymentResponse>>>> GetCompanyReportByStatusAndPeriod()
     {

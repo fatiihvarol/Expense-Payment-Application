@@ -3,6 +3,7 @@ using System.Reflection;
 using System.Text;
 using System.Text.Json.Serialization;
 using AutoMapper;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -11,6 +12,7 @@ using Microsoft.OpenApi.Models;
 using Web.Business.Cqrs;
 using Web.Business.Mapper;
 using Web.Business.Services;
+using Web.Business.Validator;
 using Web.Data.DbContext;
 using WebBase.Helper;
 using WebBase.Token;
@@ -21,6 +23,12 @@ builder.Services.AddScoped<IPaymentFactory, PaymentFactory>();
 // Add services to the container.
 builder.Services.AddControllers(); // Add this line to include required services for controllers
 builder.Services.AddSingleton<PeriodHelper>();
+
+//fluent validation implementation
+builder.Services.AddControllers().AddFluentValidation(x =>
+{
+    x.RegisterValidatorsFromAssemblyContaining<ApplicationUserValidator>();
+});
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
