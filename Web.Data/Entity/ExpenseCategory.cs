@@ -32,5 +32,7 @@ public class ExpenseCategoryConfiguration : IEntityTypeConfiguration<ExpenseCate
             .WithOne(e => e.Category)
             .HasForeignKey(e => e.CategoryId)
             .OnDelete(DeleteBehavior.Restrict); 
+        builder.Property(x => x.IsActive).IsRequired().HasDefaultValue(true);
+
     }
 }

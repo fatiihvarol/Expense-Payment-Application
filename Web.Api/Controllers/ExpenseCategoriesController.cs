@@ -44,4 +44,36 @@ public class ExpenseCategoriesController
         var result = await _mediator.Send(operation);
         return result;
     }
+    
+    
+    
+    
+    
+    
+    [HttpPost]
+    //  [Authorize(Roles = "admin")]
+    public async Task<ApiResponse<ExpenseCategoryResponse>> CreateExpenseCategory( ExpenseCategoryRequest request)
+    {
+        var operation = new CreateExpenseCategoryCommand(request) ;
+        var result = await _mediator.Send(operation);
+        return result;
+    }
+    
+   
+    [HttpPut("Id")]
+    // [Authorize(Roles = "admin")]
+    public async Task<ApiResponse> UpdateExpenseCategory(int id, ExpenseCategoryRequest request)
+    {
+        var operation = new UpdateExpenseCategoryCommand(id,request) ;
+        var result = await _mediator.Send(operation);
+        return result;
+    }
+    [HttpDelete("Id")]
+    // [Authorize(Roles = "admin")]
+    public async Task<ApiResponse> DeleteExpenseCategory(int id)
+    {
+        var operation = new DeleteExpenseCategoryCommand(id) ;
+        var result = await _mediator.Send(operation);
+        return result;
+    }
 }

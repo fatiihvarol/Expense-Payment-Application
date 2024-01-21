@@ -44,5 +44,8 @@ public class PaymentConfiguration : IEntityTypeConfiguration<Payment>
         builder.Property(p => p.Description)
             .IsRequired();
         
+        builder.Property(x => x.IsActive).IsRequired().HasDefaultValue(true);
+
+        
     }
 }

@@ -29,7 +29,8 @@ public class AddressConfiguration : IEntityTypeConfiguration<Address>
         builder.Property(a => a.City).HasMaxLength(100).IsRequired();
         builder.Property(a => a.County).HasMaxLength(100);
         builder.Property(a => a.PostalCode).HasMaxLength(20);
-        
+        builder.Property(x => x.IsActive).IsRequired().HasDefaultValue(true);
+
       
 
         builder.HasIndex(a => a.Id);

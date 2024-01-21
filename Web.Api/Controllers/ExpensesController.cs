@@ -73,7 +73,7 @@ public class ExpensesController:ControllerBase
     }
     [HttpDelete("Id")]
     // [Authorize(Roles = "admin")]
-    public async Task<ApiResponse> DeleteEmployee(int id)
+    public async Task<ApiResponse> DeleteExpense(int id)
     {
         var operation = new DeleteExpenseCommand(id) ;
         var result = await _mediator.Send(operation);

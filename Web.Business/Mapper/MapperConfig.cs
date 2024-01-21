@@ -31,5 +31,8 @@ public class MapperConfig : Profile
 
         CreateMap<Payment, PaymentResponse>();
 
+        CreateMap<ExpenseCategoryRequest, ExpenseCategory>();
+        CreateMap<ExpenseCategory, ExpenseCategoryResponse>();
+
     }
 }

@@ -5,7 +5,7 @@ using WebSchema;
 namespace Web.Business.Cqrs;
 
 public record CreateExpenseCategoryCommand(ExpenseCategoryRequest Model ):IRequest <ApiResponse<ExpenseCategoryResponse>>;
-public record UpdateExpenseCategoryCommand(int Id,EmployeeRequest Model ):IRequest <ApiResponse>;
+public record UpdateExpenseCategoryCommand(int Id,ExpenseCategoryRequest Model ):IRequest <ApiResponse>;
 public record DeleteExpenseCategoryCommand(int Id):IRequest <ApiResponse>;
 
 
