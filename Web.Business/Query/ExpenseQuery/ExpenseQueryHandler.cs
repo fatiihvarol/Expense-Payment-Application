@@ -67,7 +67,7 @@ public class ExpenseQueryHandler :
         Expression<Func<Expense, bool>> filter = u =>
             (u.CategoryId==request.CategoryId)&&
             (u.EmployeeId == request.EmployeeId) &&
-            ( u.Status.ToLower() == request.Status.ToLower()) &&
+            ( u.Status.ToString() == request.Status) &&
             (u.Amount == request.Amount);
 
         var expense = await _dbContext.Set<Expense>()

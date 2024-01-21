@@ -14,7 +14,8 @@ public class ExpenseRequest
     public decimal Amount { get; set; }
     public string Description { get; set; }
     public string Document { get; set; }
-    
+    public string PaymentRequestType { get; set; }
+
     public AddressRequest Address { get; set; }
 
 }
@@ -30,6 +31,7 @@ public class ExpenseResponse
     public string Status { get; set; }
     public string Description { get; set; }
     public string? RejectionDescription { get; set; }
+    public string PaymentRequestType { get; set; }
 
     public string Document { get; set; }
 

@@ -54,6 +54,15 @@ public class ExpensesController:ControllerBase
         var result = await _mediator.Send(operation);
         return result;
     }
+    
+    [HttpPost("Reject/{id}")]
+    //  [Authorize(Roles = "admin")]
+    public async Task<ApiResponse> DeclineExpense( int id ,string rejectionDescription)
+    {
+        var operation = new DeclineExpenseCommand(id,rejectionDescription) ;
+        var result = await _mediator.Send(operation);
+        return result;
+    }
     [HttpPut("Id")]
     // [Authorize(Roles = "admin")]
     public async Task<ApiResponse> UpdateExpense(int id,[FromQuery] string description)

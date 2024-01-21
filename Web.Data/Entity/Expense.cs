@@ -2,6 +2,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using WebBase.Entity;
+using WebBase.Enum;
 
 namespace Web.Data.Entity;
 
@@ -13,7 +14,9 @@ public class Expense : BaseEntity
     public int CategoryId { get; set; }
     public DateTime Date { get; set; }
     public decimal Amount { get; set; }
-    public string Status { get; set; }
+    public string PaymentRequestType { get; set; }
+
+    public ExpenseStatus Status { get; set; }
     public string Description { get; set; }
     public string RejectionDescription { get; set; }
 
@@ -61,7 +64,9 @@ public class ExpenseConfiguration : IEntityTypeConfiguration<Expense>
 
         builder.Property(e => e.Document)
             .HasMaxLength(255);
-
+        
+        builder.Property(e => e.PaymentRequestType)
+            .IsRequired();
         builder.HasIndex(x => x.ExpenseId);
 
     }

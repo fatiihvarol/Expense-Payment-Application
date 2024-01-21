@@ -271,6 +271,10 @@ namespace Web.Data.Migrations
                         .HasColumnType("bit")
                         .HasDefaultValue(true);
 
+                    b.Property<string>("PaymentRequestType")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("RejectionDescription")
                         .IsRequired()
                         .ValueGeneratedOnAdd()
@@ -278,9 +282,8 @@ namespace Web.Data.Migrations
                         .HasColumnType("nvarchar(255)")
                         .HasDefaultValue("");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
 
                     b.Property<DateTime?>("UpdateDate")
                         .HasColumnType("datetime2");
@@ -348,6 +351,10 @@ namespace Web.Data.Migrations
                     b.Property<decimal>("Amount")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("ExpenseId")
                         .HasColumnType("int");
 
@@ -362,10 +369,6 @@ namespace Web.Data.Migrations
 
                     b.Property<DateTime>("PaymentDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("PaymentType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ReceiverIban")
                         .IsRequired()

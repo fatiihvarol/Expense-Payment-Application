@@ -10,10 +10,12 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Web.Business.Cqrs;
 using Web.Business.Mapper;
+using Web.Business.Services;
 using Web.Data.DbContext;
 using WebBase.Token;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddScoped<IPaymentFactory, PaymentFactory>();
 
 // Add services to the container.
 builder.Services.AddControllers(); // Add this line to include required services for controllers
