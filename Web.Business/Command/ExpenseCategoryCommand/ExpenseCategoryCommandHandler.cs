@@ -62,22 +62,25 @@ public class ExpenseCategoryCommandHandler:
 
     public async Task<ApiResponse> Handle(DeleteExpenseCategoryCommand request, CancellationToken cancellationToken)
     {
-        var fromDb = await _dbContext.Set<ExpenseCategory>()
+        var expenseCategory = await _dbContext.Set<ExpenseCategory>()
+            .Include(ec => ec.Expenses)
             .FirstOrDefaultAsync(x => x.CategoryId == request.Id, cancellationToken);
-    
-        if (fromDb is null)
+
+        if (expenseCategory is null)
             return new ApiResponse($"Expense category with {request.Id} id not found");
 
-        var expenseRequests = await _dbContext.Set<Expense>()
-            .FirstOrDefaultAsync(x => x.CategoryId == request.Id, cancellationToken);
-        
-        if (expenseRequests is not null)
-            return new ApiResponse($"Expense category with {request.Id} has payment requests you can not delete");
+        if (CheckExpenseCategoryHasWaitingExpenses(expenseCategory.Expenses))
+            return new ApiResponse("You cannot delete the category while there are pending payments");
 
-        fromDb.IsActive = false;
-        
+        expenseCategory.IsActive = false;
+
         await _dbContext.SaveChangesAsync(cancellationToken);
 
         return new ApiResponse();
+    }
+
+    private bool CheckExpenseCategoryHasWaitingExpenses(List<Expense> expenses)
+    {
+        return expenses.Any(expense => expense.Status == ExpenseStatus.Waiting);
     }
 }
