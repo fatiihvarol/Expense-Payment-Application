@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Web.Data.DbContext;
 
@@ -11,9 +12,11 @@ using Web.Data.DbContext;
 namespace Web.Data.Migrations
 {
     [DbContext(typeof(VbDbContext))]
-    partial class VbDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240121175226_EmployeeFixes")]
+    partial class EmployeeFixes
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -61,6 +64,9 @@ namespace Web.Data.Migrations
                     b.Property<DateTime>("InsertDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("InsertUserId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
@@ -76,6 +82,9 @@ namespace Web.Data.Migrations
 
                     b.Property<DateTime?>("UpdateDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<int?>("UpdateUserId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -110,6 +119,9 @@ namespace Web.Data.Migrations
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETDATE()");
 
+                    b.Property<int>("InsertUserId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
@@ -140,6 +152,9 @@ namespace Web.Data.Migrations
 
                     b.Property<DateTime?>("UpdateDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<int?>("UpdateUserId")
+                        .HasColumnType("int");
 
                     b.Property<string>("UserName")
                         .IsRequired()
@@ -186,6 +201,9 @@ namespace Web.Data.Migrations
                     b.Property<DateTime>("InsertDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("InsertUserId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
@@ -196,6 +214,9 @@ namespace Web.Data.Migrations
 
                     b.Property<DateTime?>("UpdateDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<int?>("UpdateUserId")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -237,6 +258,9 @@ namespace Web.Data.Migrations
                     b.Property<DateTime>("InsertDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("InsertUserId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
@@ -258,6 +282,9 @@ namespace Web.Data.Migrations
 
                     b.Property<DateTime?>("UpdateDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<int?>("UpdateUserId")
+                        .HasColumnType("int");
 
                     b.HasKey("ExpenseId");
 
@@ -291,6 +318,9 @@ namespace Web.Data.Migrations
                     b.Property<DateTime>("InsertDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("InsertUserId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
@@ -298,6 +328,9 @@ namespace Web.Data.Migrations
 
                     b.Property<DateTime?>("UpdateDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<int?>("UpdateUserId")
+                        .HasColumnType("int");
 
                     b.HasKey("CategoryId");
 
@@ -325,6 +358,9 @@ namespace Web.Data.Migrations
                     b.Property<DateTime>("InsertDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("InsertUserId")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
@@ -339,6 +375,9 @@ namespace Web.Data.Migrations
 
                     b.Property<DateTime?>("UpdateDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<int?>("UpdateUserId")
+                        .HasColumnType("int");
 
                     b.HasKey("PaymentId");
 

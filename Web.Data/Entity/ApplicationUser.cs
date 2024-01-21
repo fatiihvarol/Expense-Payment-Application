@@ -25,9 +25,7 @@ public class ApplicationUserConfiguration : IEntityTypeConfiguration<Application
         builder.HasKey(x => x.Id);
         
         builder.Property(x => x.InsertDate).IsRequired().HasDefaultValueSql("GETDATE()");
-        builder.Property(x => x.InsertUserId).IsRequired();
         builder.Property(x => x.UpdateDate);
-        builder.Property(x => x.UpdateUserId);
         builder.Property(x => x.IsActive).IsRequired().HasDefaultValue(true);
 
         builder.Property(x => x.FirstName).IsRequired().HasMaxLength(50);

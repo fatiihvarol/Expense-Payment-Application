@@ -9,9 +9,8 @@ public class Employee:BaseEntityWithId
 {
     public int ApplicationUserId { get; set; } // Foreign key for ApplicationUser
     public ApplicationUser ApplicationUser { get; set; } 
-    public string IdentityNumber { get; set; }
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
+    public string IdentityNumber { get; set; } 
+    
     public string EmployeeNumber { get; set; }
     public DateTime DateOfBirth { get; set; }
     public string IBAN { get; set; }
@@ -27,8 +26,6 @@ public class Employee:BaseEntityWithId
     public void Configure(EntityTypeBuilder<Employee> builder)
     {
         builder.Property(e => e.IdentityNumber).HasMaxLength(50).IsRequired();
-        builder.Property(e => e.FirstName).HasMaxLength(50).IsRequired();
-        builder.Property(e => e.LastName).HasMaxLength(50).IsRequired();
         builder.Property(e => e.EmployeeNumber).HasMaxLength(50).IsRequired();
         builder.Property(e => e.DateOfBirth).IsRequired();
         builder.Property(e => e.IBAN).HasMaxLength(50).IsRequired();

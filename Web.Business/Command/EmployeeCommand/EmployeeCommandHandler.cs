@@ -52,8 +52,6 @@ public class EmployeeCommandHandler : IRequestHandler<CreateEmployeeCommand, Api
         if (fromDb is null)
             return new ApiResponse("employee not found to update");
 
-        fromDb.FirstName = request.Model.FirstName;
-        fromDb.LastName = request.Model.LastName;
         fromDb.IBAN = request.Model.IBAN;
 
         fromDb.UpdateDate = DateTime.Now;

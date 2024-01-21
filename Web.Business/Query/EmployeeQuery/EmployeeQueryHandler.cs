@@ -64,10 +64,8 @@ public class EmployeeQueryHandler : IRequestHandler<GelAllEmployeesQuery, ApiRes
     {
         Expression<Func<Employee, bool>> filter = u =>
             (string.IsNullOrWhiteSpace(request.FirstName) ||
-             u.FirstName.ToLower() == request.FirstName.ToLower()) &&
-            (string.IsNullOrWhiteSpace(request.Lastname) || u.LastName.ToLower() == request.Lastname.ToLower()) &&
             (string.IsNullOrWhiteSpace(request.IdentityNumber) ||
-             u.IdentityNumber.ToLower() == request.IdentityNumber.ToLower());
+             u.IdentityNumber.ToLower() == request.IdentityNumber.ToLower()));
 
         var employees = await _dbContext.Set<Employee>()
             .Include(x => x.Expenses)

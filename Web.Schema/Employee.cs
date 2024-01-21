@@ -9,8 +9,7 @@ public class EmployeeRequest
     public int Id { get; set; }
     public int ApplicationUserId { get; set; }  
     public string IdentityNumber { get; set; }
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
+  
     public DateTime DateOfBirth { get; set; }
     public string IBAN { get; set; }
     
@@ -21,8 +20,6 @@ public class EmployeeResponse
     public int Id { get; set; }
     public int ApplicationUserId { get; set; } 
     public string IdentityNumber { get; set; }
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
     public string EmployeeNumber { get; set; }
     public DateTime DateOfBirth { get; set; }
     public string IBAN { get; set; }
