@@ -68,6 +68,12 @@ public class ExpenseCategoryCommandHandler:
         if (fromDb is null)
             return new ApiResponse($"Expense category with {request.Id} id not found");
 
+        var expenseRequests = await _dbContext.Set<Expense>()
+            .FirstOrDefaultAsync(x => x.CategoryId == request.Id, cancellationToken);
+        
+        if (expenseRequests is not null)
+            return new ApiResponse($"Expense category with {request.Id} has payment requests you can not delete");
+
         fromDb.IsActive = false;
         
         await _dbContext.SaveChangesAsync(cancellationToken);
