@@ -3,12 +3,6 @@ using WebBase.Enum;
 
 namespace WebSchema;
 
-public class ReportRequest
-{
-    public ReportTimePeriod ReportRequestTimePeriod { get; set; } // 0: Daily  1:Weekly   2:Monthly
-    
-    public ExpenseStatus PaymentStatus{ get; set; } // 0: Pending  1:Approved   2:Rejected
-}
 public class ReportResponse
 {
     public int ExpenseId { get; set; }
