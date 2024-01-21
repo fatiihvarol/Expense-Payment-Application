@@ -17,7 +17,7 @@ public class MapperConfig : Profile
             .ForMember(dest => dest.Address, opt => opt.MapFrom(src => src.Address))
             .ForMember(dest => dest.Category, opt => opt.MapFrom(src => src.Category))
             .ForMember(dest => dest.Payment, opt => opt.MapFrom(src => src.Payment));
-
+    
         CreateMap<Address, AddressResponse>();
         CreateMap<AddressRequest, Address>();
 
@@ -34,5 +34,9 @@ public class MapperConfig : Profile
         CreateMap<ExpenseCategoryRequest, ExpenseCategory>();
         CreateMap<ExpenseCategory, ExpenseCategoryResponse>();
 
+        CreateMap<Expense, ReportResponse>()
+            .ForMember(dest => dest.Address, opt => opt.MapFrom(src => src.Address))
+            .ForMember(dest => dest.Category, opt => opt.MapFrom(src => src.Category))
+            .ForMember(dest => dest.Payment, opt => opt.MapFrom(src => src.Payment));
     }
 }
