@@ -59,6 +59,8 @@ public class ExpenseCategoryQueryHandler:
         var fromDb = await _dbContext.Set<ExpenseCategory>()
             .Where(filter)
             .ToListAsync(cancellationToken);
+        if (!fromDb.Any())
+            return new ApiResponse<List<ExpenseCategoryResponse>>("there is no expense category with this parameters");
 
         var mapped = _mapper.Map<List<ExpenseCategory>, List<ExpenseCategoryResponse>>(fromDb);
 

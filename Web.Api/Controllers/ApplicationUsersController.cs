@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Caching.Memory;
 using Web.Business.Cqrs;
 using WebBase.Response;
 using WebSchema;
@@ -14,10 +15,24 @@ namespace WebApi.Controllers
     public class ApplicationUsersController : ControllerBase
     {
         private readonly IMediator _mediator;
+        private readonly IMemoryCache _memoryCache;
 
-        public ApplicationUsersController(IMediator mediator)
+        public ApplicationUsersController(IMediator mediator,IMemoryCache memoryCache)
         {
             _mediator = mediator;
+            _memoryCache = memoryCache;
+        }
+        [HttpGet("MyProfile")]
+        [Authorize]
+        public async Task<ApiResponse<ApplicationUserResponse>> GetMyProfile()
+        {
+            if (!int.TryParse(User.FindFirstValue("Id"), out var userId))
+            {
+                return new ApiResponse<ApplicationUserResponse>("Invalid user information");
+            }
+            
+            var result = await _mediator.Send(new GetByIdApplicationUserQuery(userId)); 
+            return result;
         }
 
         [HttpGet]

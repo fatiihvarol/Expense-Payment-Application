@@ -20,7 +20,7 @@ namespace WebApi.Controllers
         public EmployeeController(IMediator mediator,IMemoryCache memoryCache)
         {
             _mediator = mediator;
-            _memoryCache = memoryCache ?? throw new ArgumentNullException(nameof(memoryCache));
+            _memoryCache = memoryCache ;
         }
 
         [HttpGet("MyProfile")]

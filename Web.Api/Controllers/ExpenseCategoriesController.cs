@@ -1,4 +1,5 @@
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Web.Business.Cqrs;
 using WebBase.Response;
@@ -17,7 +18,7 @@ public class ExpenseCategoriesController
     }
 
     [HttpGet]
-    // [Authorize(Roles = "admin")]
+    [Authorize(Roles = "admin,employee")]
     public async Task<ApiResponse<List<ExpenseCategoryResponse>>> GetAlExpenseCategories()
     {
         var operation = new GelAllExpenseCategoriesQuery();
@@ -26,7 +27,7 @@ public class ExpenseCategoriesController
     }
 
     [HttpGet("{id}")]
-    //  [Authorize(Roles = "admin")]
+    [Authorize(Roles = "admin,employee")]
     public async Task<ApiResponse<ExpenseCategoryResponse>> GetExpenseCategoryById(int id)
     {
         var operation = new GetByIdExpenseCategoryQuery(id) ;
@@ -34,8 +35,8 @@ public class ExpenseCategoriesController
         return result;
     }
 
-    [HttpGet("search")]
-    // [Authorize(Roles = "admin")]
+    [HttpGet("search")] 
+    [Authorize(Roles = "admin,employee")]
     public async Task<ApiResponse<List<ExpenseCategoryResponse>>> GetExpenseCategoryByParameters(
         [FromQuery] string categoryName, [FromQuery] string description)
     {
@@ -46,12 +47,8 @@ public class ExpenseCategoriesController
     }
     
     
-    
-    
-    
-    
-    [HttpPost]
-    //  [Authorize(Roles = "admin")]
+    [HttpPost] 
+    [Authorize(Roles = "admin")]
     public async Task<ApiResponse<ExpenseCategoryResponse>> CreateExpenseCategory( ExpenseCategoryRequest request)
     {
         var operation = new CreateExpenseCategoryCommand(request) ;
@@ -60,8 +57,8 @@ public class ExpenseCategoriesController
     }
     
    
-    [HttpPut("Id")]
-    // [Authorize(Roles = "admin")]
+    [HttpPut("Id")] 
+    [Authorize(Roles = "admin")]
     public async Task<ApiResponse> UpdateExpenseCategory(int id, ExpenseCategoryRequest request)
     {
         var operation = new UpdateExpenseCategoryCommand(id,request) ;
@@ -69,7 +66,7 @@ public class ExpenseCategoriesController
         return result;
     }
     [HttpDelete("Id")]
-    // [Authorize(Roles = "admin")]
+    [Authorize(Roles = "admin")]
     public async Task<ApiResponse> DeleteExpenseCategory(int id)
     {
         var operation = new DeleteExpenseCategoryCommand(id) ;
