@@ -5,7 +5,7 @@ using WebSchema;
 
 namespace Web.Business.Cqrs;
 
-public record GelMyReportQuery(int Id):IRequest <ApiResponse<List<ReportResponse>>>;
+public record GetMyReportQuery(int Id):IRequest <ApiResponse<List<ReportResponse>>>;
 
 public record GetCompanyReportQueryByPeriod(ReportTimePeriod ReportTimePeriod):IRequest<ApiResponse<List<ReportResponse>>>;
 

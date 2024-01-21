@@ -27,9 +27,8 @@ public class ExpensesController:ControllerBase
     public async Task<ApiResponse<List<ExpenseResponse>>> GetMyProfile()
     {
         if (!int.TryParse(User.FindFirstValue("Id"), out var userId))
-        {
             return new ApiResponse<List<ExpenseResponse>>("Invalid user information");
-        }
+        
 
         var cacheKey = $"ApplicationUserId_{userId}";
         if (_memoryCache.TryGetValue(cacheKey, out int cachedEmployeeId))
@@ -41,17 +40,17 @@ public class ExpensesController:ControllerBase
         return new ApiResponse<List<ExpenseResponse>>("Employee information not found in cache");
     }
     [HttpGet]
-    // [Authorize(Roles = "admin")]
-    public async Task<ApiResponse<List<ExpenseResponse>>> GetAllEmployees()
+    [Authorize(Roles = "admin")]
+    public async Task<ApiResponse<List<ExpenseResponse>>> GetAllExpenses()
     {
         var operation = new GelAllExpensesQuery();
         var result = await _mediator.Send(operation);
         return result;
     }
 
-    [HttpGet("{id}")]
-    //  [Authorize(Roles = "admin")]
-    public async Task<ApiResponse<ExpenseResponse>> GetEmployeeById(int id)
+    [HttpGet("{id}")] 
+    [Authorize(Roles = "admin")]
+    public async Task<ApiResponse<ExpenseResponse>> GetExpenseById(int id)
     {
         var operation = new GetByIdExpenseQuery(id) ;
         var result = await _mediator.Send(operation);
@@ -59,7 +58,7 @@ public class ExpensesController:ControllerBase
     }
 
     [HttpGet("search")]
-    // [Authorize(Roles = "admin")]
+    [Authorize(Roles = "admin,employee")]
     public async Task<ApiResponse<List<ExpenseResponse>>> GetEmployeeByParameters(
         [FromQuery] int categoryId, [FromQuery] int employeeId    , [FromQuery] string? status,[FromQuery] decimal amount)
     {
@@ -71,32 +70,39 @@ public class ExpensesController:ControllerBase
     
     
     [HttpPost]
-    //  [Authorize(Roles = "admin")]
+    [Authorize(Roles = "employee")]
     public async Task<ApiResponse<ExpenseResponse>> CreateExpense( ExpenseRequest request)
     {
+        if (!int.TryParse(User.FindFirstValue("Id"), out var userId))
+             return new ApiResponse<ExpenseResponse>("Invalid user information");
+        var cacheKey = $"ApplicationUserId_{userId}";
+        if (_memoryCache.TryGetValue(cacheKey, out int cachedEmployeeId))
+            if (cachedEmployeeId!=request.EmployeeId)
+                return new ApiResponse<ExpenseResponse>("You can only add an expense for yourself.");
+        
         var operation = new CreateExpenseCommand(request) ;
         var result = await _mediator.Send(operation);
         return result;
     }
     
     [HttpPost("Reject/{id}")]
-    //  [Authorize(Roles = "admin")]
+    [Authorize(Roles = "admin")]
     public async Task<ApiResponse> DeclineExpense( int id ,string rejectionDescription)
     {
         var operation = new DeclineExpenseCommand(id,rejectionDescription) ;
         var result = await _mediator.Send(operation);
         return result;
     }
-    [HttpPut("Id")]
-    // [Authorize(Roles = "admin")]
+    [HttpPut("Id")] 
+    [Authorize(Roles = "admin")]
     public async Task<ApiResponse> UpdateExpense(int id,[FromQuery] string description)
     {
         var operation = new UpdateExpenseCommand(id,description) ;
         var result = await _mediator.Send(operation);
         return result;
     }
-    [HttpDelete("Id")]
-    // [Authorize(Roles = "admin")]
+    [HttpDelete("Id")] 
+    [Authorize(Roles = "admin")]
     public async Task<ApiResponse> DeleteExpense(int id)
     {
         var operation = new DeleteExpenseCommand(id) ;

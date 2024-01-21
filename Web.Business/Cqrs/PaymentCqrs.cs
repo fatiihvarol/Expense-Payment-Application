@@ -10,6 +10,7 @@ public record DeletePaymentCommand(int Id):IRequest <ApiResponse>;
 
 
 public record GelAllPaymentsQuery():IRequest <ApiResponse<List<PaymentResponse>>>;
+
 public record GetByIdPaymentQuery(int Id):IRequest <ApiResponse<PaymentResponse>>;
 public record GetByParameterPaymentsQuery(int ExpenseId,string ReceiverIban,decimal Amount ):IRequest <ApiResponse<List<PaymentResponse>>>;
 

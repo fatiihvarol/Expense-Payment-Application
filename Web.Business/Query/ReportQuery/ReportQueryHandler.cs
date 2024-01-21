@@ -12,7 +12,7 @@ using WebBase.Helper;
 namespace Web.Business.Query.ReportQuery
 {
     public class ReportQueryHandler :
-        IRequestHandler<GelMyReportQuery, ApiResponse<List<ReportResponse>>>,
+        IRequestHandler<GetMyReportQuery, ApiResponse<List<ReportResponse>>>,
         IRequestHandler<GetCompanyReportQueryByPeriod, ApiResponse<List<ReportResponse>>>,
         IRequestHandler<GetEmployeeReportQuery, ApiResponse<List<ReportResponse>>>,
         IRequestHandler<GetCompanyReportQueryByStatusAndPeriod, ApiResponse<List<ReportResponse>>>,
@@ -31,7 +31,7 @@ namespace Web.Business.Query.ReportQuery
             _periodHelper = periodHelper;
         }
 
-        public async Task<ApiResponse<List<ReportResponse>>> Handle(GelMyReportQuery request,
+        public async Task<ApiResponse<List<ReportResponse>>> Handle(GetMyReportQuery request,
             CancellationToken cancellationToken)
         {
             var report = await _dbContext.Set<Expense>()

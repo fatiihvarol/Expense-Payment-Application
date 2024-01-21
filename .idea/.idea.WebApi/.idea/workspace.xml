@@ -10,8 +10,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31418a8e-4f30-43ee-8ea5-210c8ec81ee4" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Web.Api/Controllers/ApplicationUsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/Controllers/ApplicationUsersController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Web.Api/Controllers/EmployeeController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/Controllers/EmployeeController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApi/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Api/Controllers/ExpensesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/Controllers/ExpensesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Api/Controllers/PaymentsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/Controllers/PaymentsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Api/Controllers/ReportsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/Controllers/ReportsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Api.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Api.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Api.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Business.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Business.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Business.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/bin/Debug/net8.0/Web.Business.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/Web.Api.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/ref/Web.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/ref/Web.Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/refint/Web.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Api/obj/Debug/net8.0/refint/Web.Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Business/Command/ExpenseCommand/ExpenseCommandHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Business/Command/ExpenseCommand/ExpenseCommandHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Business/Cqrs/PaymentCqrs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Business/Cqrs/PaymentCqrs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Business/Cqrs/ReportCqrs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Business/Cqrs/ReportCqrs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Business/bin/Debug/net8.0/Web.Business.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Business/bin/Debug/net8.0/Web.Business.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Business/bin/Debug/net8.0/Web.Business.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Business/bin/Debug/net8.0/Web.Business.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Business/obj/Debug/net8.0/Web.Business.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Business/obj/Debug/net8.0/Web.Business.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Business/obj/Debug/net8.0/Web.Business.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Business/obj/Debug/net8.0/Web.Business.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Business/obj/Debug/net8.0/Web.Business.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Business/obj/Debug/net8.0/Web.Business.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Business/obj/Debug/net8.0/Web.Business.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Business/obj/Debug/net8.0/Web.Business.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Business/obj/Debug/net8.0/Web.Business.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Business/obj/Debug/net8.0/Web.Business.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Business/obj/Debug/net8.0/ref/Web.Business.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Business/obj/Debug/net8.0/ref/Web.Business.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Web.Business/obj/Debug/net8.0/refint/Web.Business.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Web.Business/obj/Debug/net8.0/refint/Web.Business.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +179,7 @@
       <workItem from="1705593678345" duration="2171000" />
       <workItem from="1705687334399" duration="7009000" />
       <workItem from="1705700674371" duration="496000" />
-      <workItem from="1705828557442" duration="29494000" />
+      <workItem from="1705828557442" duration="31279000" />
     </task>
     <task id="LOCAL-00001" summary="all schemas complated">
       <option name="closed" value="true" />

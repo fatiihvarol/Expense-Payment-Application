@@ -1,4 +1,5 @@
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Web.Business.Cqrs;
 using WebBase.Response;
@@ -15,8 +16,9 @@ public class PaymentsController
     {
         _mediator = mediator;
     }
+    
     [HttpGet]
-    // [Authorize(Roles = "admin")]
+    [Authorize(Roles = "admin")]
     public async Task<ApiResponse<List<PaymentResponse>>> GetAllPayments()
     {
         var operation = new GelAllPaymentsQuery();
@@ -24,8 +26,8 @@ public class PaymentsController
         return result;
     }
 
-    [HttpGet("{id}")]
-    //  [Authorize(Roles = "admin")]
+    [HttpGet("{id}")] 
+    [Authorize(Roles = "admin")]
     public async Task<ApiResponse<PaymentResponse>> GetPaymentById(int id)
     {
         var operation = new GetByIdPaymentQuery(id) ;
@@ -33,12 +35,12 @@ public class PaymentsController
         return result;
     }
 
-    [HttpGet("search")]
-    // [Authorize(Roles = "admin")]
+    [HttpGet("search")] 
+    [Authorize(Roles = "admin")]
     public async Task<ApiResponse<List<PaymentResponse>>> GetPaymentsByParameters(
-        [FromQuery] int expenseId,[FromQuery] decimal amount,[FromQuery] string recieverIban)
+        [FromQuery] int expenseId,[FromQuery] decimal amount,[FromQuery] string receiverIban)
     {
-        var operation = new GetByParameterPaymentsQuery(expenseId,recieverIban,amount) ;
+        var operation = new GetByParameterPaymentsQuery(expenseId,receiverIban,amount) ;
 
         var result = await _mediator.Send(operation);
         return result;

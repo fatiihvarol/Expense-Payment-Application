@@ -4,8 +4,10 @@ using Web.Business.Cqrs;
 using WebBase.Response;
 using WebSchema;
 using System.Collections.Generic;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.Extensions.Caching.Memory;
 using Web.Data.Entity;
 using WebBase.Enum;
 
@@ -16,19 +18,31 @@ namespace WebApi.Controllers;
 public class ReportsController : ControllerBase
 {
     private readonly IMediator _mediator;
+    private readonly IMemoryCache _memoryCache;
 
-    public ReportsController(IMediator mediator)
+    public ReportsController(IMediator mediator,IMemoryCache memoryCache)
     {
         _mediator = mediator;
+        _memoryCache = memoryCache;
     }
 
    // [Authorize(Roles = "employee,admin")]
     [HttpGet("MyReport")]
-    public async Task<ActionResult<ApiResponse<List<ReportResponse>>>> GetMyReport(int id)
+    public async Task<ActionResult<ApiResponse<List<ReportResponse>>>> GetMyReport()
     {
-        var operation = new GelMyReportQuery(id);
-        var result = await _mediator.Send(operation);
-        return result;
+        if (!int.TryParse(User.FindFirstValue("Id"), out var userId))
+            return new ApiResponse<List<ReportResponse>>("Invalid user information");
+        
+        var cacheKey = $"ApplicationUserId_{userId}";
+        if (_memoryCache.TryGetValue(cacheKey, out int cachedEmployeeId))
+        {
+            var operation = new GetMyReportQuery(cachedEmployeeId);
+            var result = await _mediator.Send(operation);
+            return result;
+        }
+
+        return new ApiResponse<List<ReportResponse>>("employee id not found in cache");
+
     }
     
     
