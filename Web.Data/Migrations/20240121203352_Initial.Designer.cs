@@ -12,8 +12,8 @@ using Web.Data.DbContext;
 namespace Web.Data.Migrations
 {
     [DbContext(typeof(VbDbContext))]
-    [Migration("20240118162904_EmployeFixes")]
-    partial class EmployeFixes
+    [Migration("20240121203352_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -64,11 +64,10 @@ namespace Web.Data.Migrations
                     b.Property<DateTime>("InsertDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("InsertUserId")
-                        .HasColumnType("int");
-
                     b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
 
                     b.Property<bool>("IsDefault")
                         .HasColumnType("bit");
@@ -80,9 +79,6 @@ namespace Web.Data.Migrations
 
                     b.Property<DateTime?>("UpdateDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<int?>("UpdateUserId")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -117,9 +113,6 @@ namespace Web.Data.Migrations
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETDATE()");
 
-                    b.Property<int>("InsertUserId")
-                        .HasColumnType("int");
-
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
@@ -150,9 +143,6 @@ namespace Web.Data.Migrations
 
                     b.Property<DateTime?>("UpdateDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<int?>("UpdateUserId")
-                        .HasColumnType("int");
 
                     b.Property<string>("UserName")
                         .IsRequired()
@@ -186,11 +176,6 @@ namespace Web.Data.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
                     b.Property<string>("IBAN")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -204,9 +189,6 @@ namespace Web.Data.Migrations
                     b.Property<DateTime>("InsertDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("InsertUserId")
-                        .HasColumnType("int");
-
                     b.Property<bool>("IsActive")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
@@ -215,16 +197,8 @@ namespace Web.Data.Migrations
                     b.Property<DateTime>("LastActivityDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
                     b.Property<DateTime?>("UpdateDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<int?>("UpdateUserId")
-                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -266,32 +240,35 @@ namespace Web.Data.Migrations
                     b.Property<DateTime>("InsertDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("InsertUserId")
-                        .HasColumnType("int");
-
                     b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
 
-                    b.Property<string>("RejectionDescription")
-                        .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)");
-
-                    b.Property<string>("Status")
+                    b.Property<string>("PaymentRequestType")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("RejectionDescription")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)")
+                        .HasDefaultValue("");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
                     b.Property<DateTime?>("UpdateDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<int?>("UpdateUserId")
-                        .HasColumnType("int");
 
                     b.HasKey("ExpenseId");
 
                     b.HasIndex("CategoryId");
 
                     b.HasIndex("EmployeeId");
+
+                    b.HasIndex("ExpenseId");
 
                     b.ToTable("Expense", "dbo");
                 });
@@ -317,17 +294,13 @@ namespace Web.Data.Migrations
                     b.Property<DateTime>("InsertDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("InsertUserId")
-                        .HasColumnType("int");
-
                     b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
 
                     b.Property<DateTime?>("UpdateDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<int?>("UpdateUserId")
-                        .HasColumnType("int");
 
                     b.HasKey("CategoryId");
 
@@ -345,24 +318,23 @@ namespace Web.Data.Migrations
                     b.Property<decimal>("Amount")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("ExpenseId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("InsertDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("InsertUserId")
-                        .HasColumnType("int");
-
                     b.Property<bool>("IsActive")
-                        .HasColumnType("bit");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
 
                     b.Property<DateTime>("PaymentDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("PaymentType")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ReceiverIban")
                         .IsRequired()
@@ -370,9 +342,6 @@ namespace Web.Data.Migrations
 
                     b.Property<DateTime?>("UpdateDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<int?>("UpdateUserId")
-                        .HasColumnType("int");
 
                     b.HasKey("PaymentId");
 

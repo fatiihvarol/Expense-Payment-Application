@@ -29,40 +29,13 @@ namespace Web.Data.Migrations
                     Role = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
                     LastActivityDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     PasswordRetryCount = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
-                    InsertUserId = table.Column<int>(type: "int", nullable: false),
                     InsertDate = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETDATE()"),
-                    UpdateUserId = table.Column<int>(type: "int", nullable: true),
                     UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ApplicationUser", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Employee",
-                schema: "dbo",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    IdentityNumber = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    EmployeeNumber = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    IBAN = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    LastActivityDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    InsertUserId = table.Column<int>(type: "int", nullable: false),
-                    InsertDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdateUserId = table.Column<int>(type: "int", nullable: true),
-                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IsActive = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Employee", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -74,15 +47,42 @@ namespace Web.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     CategoryName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Description = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    InsertUserId = table.Column<int>(type: "int", nullable: false),
                     InsertDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdateUserId = table.Column<int>(type: "int", nullable: true),
                     UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IsActive = table.Column<bool>(type: "bit", nullable: false)
+                    IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ExpenseCategory", x => x.CategoryId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Employee",
+                schema: "dbo",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ApplicationUserId = table.Column<int>(type: "int", nullable: false),
+                    IdentityNumber = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    EmployeeNumber = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    DateOfBirth = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    IBAN = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    LastActivityDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    InsertDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Employee", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Employee_ApplicationUser_ApplicationUserId",
+                        column: x => x.ApplicationUserId,
+                        principalSchema: "dbo",
+                        principalTable: "ApplicationUser",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -96,15 +96,14 @@ namespace Web.Data.Migrations
                     CategoryId = table.Column<int>(type: "int", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    PaymentRequestType = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Status = table.Column<int>(type: "int", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    RejectionDescription = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
+                    RejectionDescription = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false, defaultValue: ""),
                     Document = table.Column<string>(type: "nvarchar(255)", maxLength: 255, nullable: false),
-                    InsertUserId = table.Column<int>(type: "int", nullable: false),
                     InsertDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdateUserId = table.Column<int>(type: "int", nullable: true),
                     UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IsActive = table.Column<bool>(type: "bit", nullable: false)
+                    IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true)
                 },
                 constraints: table =>
                 {
@@ -140,11 +139,9 @@ namespace Web.Data.Migrations
                     County = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     PostalCode = table.Column<string>(type: "nvarchar(20)", maxLength: 20, nullable: false),
                     IsDefault = table.Column<bool>(type: "bit", nullable: false),
-                    InsertUserId = table.Column<int>(type: "int", nullable: false),
                     InsertDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdateUserId = table.Column<int>(type: "int", nullable: true),
                     UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IsActive = table.Column<bool>(type: "bit", nullable: false)
+                    IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true)
                 },
                 constraints: table =>
                 {
@@ -166,8 +163,13 @@ namespace Web.Data.Migrations
                     PaymentId = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ExpenseId = table.Column<int>(type: "int", nullable: false),
+                    ReceiverIban = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Amount = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    PaymentDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    PaymentDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    InsertDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UpdateDate = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true)
                 },
                 constraints: table =>
                 {
@@ -202,6 +204,12 @@ namespace Web.Data.Migrations
                 unique: true);
 
             migrationBuilder.CreateIndex(
+                name: "IX_Employee_ApplicationUserId",
+                schema: "dbo",
+                table: "Employee",
+                column: "ApplicationUserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Expense_CategoryId",
                 schema: "dbo",
                 table: "Expense",
@@ -214,11 +222,36 @@ namespace Web.Data.Migrations
                 column: "EmployeeId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Expense_ExpenseId",
+                schema: "dbo",
+                table: "Expense",
+                column: "ExpenseId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Payment_ExpenseId",
                 schema: "dbo",
                 table: "Payment",
                 column: "ExpenseId",
                 unique: true);
+            
+            //password hashed 2 times password=123
+            migrationBuilder.Sql(@"
+        INSERT INTO dbo.ApplicationUser (UserName, Password, FirstName, LastName, Email, Role, LastActivityDate)
+        VALUES ('admin', 'd9b1d7db4cd6e70935368a1efb10e377', 'admin', 'admin', 'admin@example.com', 'admin', GETDATE());
+    ");
+
+            //password hashed 2 times password=123
+            migrationBuilder.Sql(@"
+        INSERT INTO dbo.ApplicationUser (UserName, Password, FirstName, LastName, Email, Role, LastActivityDate)
+        VALUES ('employee', 'd9b1d7db4cd6e70935368a1efb10e377', 'employee', 'employee', 'employee@example.com', 'employee', GETDATE());
+    ");
+            
+            
+            migrationBuilder.Sql(@"
+        INSERT INTO dbo.Employee (ApplicationUserId, IdentityNumber, EmployeeNumber, DateOfBirth, IBAN, LastActivityDate, InsertDate)
+        SELECT Id, '1234567890', 'EMP001', '1990-01-01', 'TR123456789012345678901234', GETDATE(), GETDATE()
+        FROM dbo.ApplicationUser WHERE UserName = 'employee';
+    ");
         }
 
         /// <inheritdoc />
@@ -226,10 +259,6 @@ namespace Web.Data.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Address",
-                schema: "dbo");
-
-            migrationBuilder.DropTable(
-                name: "ApplicationUser",
                 schema: "dbo");
 
             migrationBuilder.DropTable(
@@ -247,6 +276,13 @@ namespace Web.Data.Migrations
             migrationBuilder.DropTable(
                 name: "ExpenseCategory",
                 schema: "dbo");
+
+            migrationBuilder.DropTable(
+                name: "ApplicationUser",
+                schema: "dbo");
+            
+            migrationBuilder.Sql("DELETE FROM dbo.ApplicationUser WHERE UserName = 'admin';");
+            migrationBuilder.Sql("DELETE FROM dbo.ApplicationUser WHERE UserName = 'employee';");
         }
     }
 }

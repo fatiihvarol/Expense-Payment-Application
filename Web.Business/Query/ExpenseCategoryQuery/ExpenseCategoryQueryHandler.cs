@@ -29,6 +29,9 @@ public class ExpenseCategoryQueryHandler:
         var fromDb = await _dbContext.Set<ExpenseCategory>()
             .ToListAsync(cancellationToken);
 
+        if (!fromDb.Any())
+            return new ApiResponse<List<ExpenseCategoryResponse>>("there is no category yet");
+            
         var mapped = _mapper.Map<List<ExpenseCategory>,List< ExpenseCategoryResponse>>(fromDb);
 
         return new ApiResponse<List<ExpenseCategoryResponse>>(mapped);
