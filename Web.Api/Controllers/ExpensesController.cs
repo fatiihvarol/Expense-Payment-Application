@@ -1,5 +1,8 @@
+using System.Security.Claims;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Memory;
 using Web.Business.Cqrs;
 using WebBase.Response;
 using WebSchema;
@@ -10,12 +13,33 @@ namespace WebApi.Controllers;
 public class ExpensesController:ControllerBase
 {
     private readonly IMediator _mediator;
+    private readonly IMemoryCache _memoryCache;
 
-    public ExpensesController(IMediator mediator)
+    public ExpensesController(IMediator mediator,IMemoryCache memoryCache)
     {
         _mediator = mediator;
+        _memoryCache = memoryCache;
     }
 
+    
+    [HttpGet("MyExpenses")]
+    [Authorize]
+    public async Task<ApiResponse<List<ExpenseResponse>>> GetMyProfile()
+    {
+        if (!int.TryParse(User.FindFirstValue("Id"), out var userId))
+        {
+            return new ApiResponse<List<ExpenseResponse>>("Invalid user information");
+        }
+
+        var cacheKey = $"ApplicationUserId_{userId}";
+        if (_memoryCache.TryGetValue(cacheKey, out int cachedEmployeeId))
+        {
+            var result = await _mediator.Send(new GelExpenseByEmployeeIdQuery(cachedEmployeeId));
+            return result;
+        }
+
+        return new ApiResponse<List<ExpenseResponse>>("Employee information not found in cache");
+    }
     [HttpGet]
     // [Authorize(Roles = "admin")]
     public async Task<ApiResponse<List<ExpenseResponse>>> GetAllEmployees()

@@ -13,7 +13,9 @@ namespace Web.Business.Query.ExpenseQuery;
 public class ExpenseQueryHandler :
     IRequestHandler<GelAllExpensesQuery, ApiResponse<List<ExpenseResponse>>>,
     IRequestHandler<GetByIdExpenseQuery, ApiResponse<ExpenseResponse>>,
-    IRequestHandler<GetByParameterExpenseQuery, ApiResponse<List<ExpenseResponse>>>
+    IRequestHandler<GetByParameterExpenseQuery, ApiResponse<List<ExpenseResponse>>>,
+    IRequestHandler<GelExpenseByEmployeeIdQuery, ApiResponse<List<ExpenseResponse>>>
+
 
 {
     private readonly VbDbContext _dbContext;
@@ -40,7 +42,7 @@ public class ExpenseQueryHandler :
 
 
     }
-
+ 
     public async Task<ApiResponse<ExpenseResponse>> Handle(GetByIdExpenseQuery request,
         CancellationToken cancellationToken)
     {
@@ -86,5 +88,23 @@ public class ExpenseQueryHandler :
         return new ApiResponse<List<ExpenseResponse>>(mapped);
 
 
+    }
+
+    public async Task<ApiResponse<List<ExpenseResponse>>> Handle(GelExpenseByEmployeeIdQuery request, CancellationToken cancellationToken)
+    {
+        var expense = await _dbContext.Set<Expense>()
+            .Include(x => x.Address)
+            .Include(x => x.Category)
+            .Include(x => x.Payment)
+            .Include(x => x.Employee)
+            .Where(x => x.EmployeeId == request.EmployeeId)
+            .ToListAsync(cancellationToken);
+
+        if (!expense.Any())
+            return new ApiResponse<List<ExpenseResponse>>("expense not found ");
+
+        var mapped = _mapper.Map<List<Expense>, List<ExpenseResponse>>(expense);
+
+        return new ApiResponse<List<ExpenseResponse>>(mapped);
     }
 }

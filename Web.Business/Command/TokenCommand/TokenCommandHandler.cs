@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Text;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Web.Business.Cqrs;
@@ -20,11 +21,14 @@ public class TokenCommandHandler :
 {
     private readonly VbDbContext dbContext;
     private readonly JwtConfig jwtConfig;
+    private readonly IMemoryCache memoryCache;
 
-    public TokenCommandHandler(VbDbContext dbContext,IOptionsMonitor<JwtConfig> jwtConfig)
+
+    public TokenCommandHandler(VbDbContext dbContext,IOptionsMonitor<JwtConfig> jwtConfig , IMemoryCache memoryCache)
     {
         this.dbContext = dbContext;
         this.jwtConfig = jwtConfig.CurrentValue;
+        this.memoryCache = memoryCache;
     }
     
     public async Task<ApiResponse<TokenResponse>> Handle(CreateTokenCommand request, CancellationToken cancellationToken)
@@ -56,6 +60,9 @@ public class TokenCommandHandler :
 
         string token = Token(user);
 
+
+
+        CacheEmployeeId(user,cancellationToken);
         return new ApiResponse<TokenResponse>( new TokenResponse()
         {
             Email = user.Email,
@@ -93,4 +100,31 @@ public class TokenCommandHandler :
 
         return claims;
     }
+
+
+    private async void CacheEmployeeId(ApplicationUser user, CancellationToken cancellationToken)
+    {
+        var employee = await dbContext.Set<Employee>()
+            .FirstOrDefaultAsync(x => x.ApplicationUserId == user.Id, cancellationToken);
+
+        if (employee != null)
+        {
+            // MemoryCache üzerine EmployeeId'yi önbelleğe alma işlemi
+            var cacheKey = $"ApplicationUserId_{user.Id}";
+            if (!memoryCache.TryGetValue(cacheKey, out int cachedEmployeeId))
+            {
+                // Önbellekte bulunamazsa, değeri ekleyin ve belirli bir süre boyunca önbellekte saklayın
+                cachedEmployeeId = employee.Id;
+                var cacheEntryOptions = new MemoryCacheEntryOptions
+                {
+                    AbsoluteExpirationRelativeToNow = TimeSpan.FromMinutes(30) // Örnek: 30 dakika
+                };
+                memoryCache.Set(cacheKey, cachedEmployeeId, cacheEntryOptions);
+            }
+
+            // Şimdi cachedEmployeeId değerini kullanabilirsiniz
+            Console.WriteLine($"Cached EmployeeId for UserId {user.Id}: {cachedEmployeeId}");
+        }
+    }
+
 }

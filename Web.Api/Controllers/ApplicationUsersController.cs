@@ -48,7 +48,8 @@ namespace WebApi.Controllers
             var result = await _mediator.Send(operation);
             return result;
         }
-        [HttpPost] 
+        [HttpPost]
+        [Authorize(Roles = "admin")]
         public async Task<ApiResponse<ApplicationUserResponse>> CreateApplicationUser( ApplicationUserRequest request)
         {
             var operation = new CreateApplicationUserCommand(request) ;
