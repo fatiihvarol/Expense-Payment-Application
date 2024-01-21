@@ -72,6 +72,8 @@ namespace WebApi.Controllers
             return result;
         }
         [HttpPost] 
+        [Authorize(Roles = "admin")]
+
         public async Task<ApiResponse<EmployeeResponse>> CreateEmployee( EmployeeRequest request)
         {
             var operation = new CreateEmployeeCommand(request) ;
